@@ -1,0 +1,55 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    min-height: 100vh; /* to make it to center*/
+    align-items: center;
+    justify-content: center;
+    font-family: 'Big Shoulders Display', cursive;
+    overflow: hidden;
+}
+.container{
+    display: flex;
+    width: 90vw;
+}
+.panel{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    border-radius: 30px;
+    flex: 0.5;
+    position: relative;
+    transition: flex 0.5 ease-in;
+    color: Gold;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.panel h3{
+    position: absolute;
+    bottom: 20px;
+    left:20px;
+    font-size: 1.5rem;
+    opacity: 0;
+}
+
+.panel.active{
+    flex: 5;
+}
+
+.panel.active h3{
+    opacity: 1;
+}
+
+/* media query to set like size of phone */
+/* when the size of laptop is less tha 480px then this css is applied*/
+@media(max-width:480px){
+    .container{
+        width: 100vw;
+    }
+    /* sudo type*/
+    .panel:nth-of-type(5),.panel:nth-of-type(6){
+        display: none;
+    }
+}
